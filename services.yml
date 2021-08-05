@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: uninstalling httpd
+      yum:
+        name: httpd
+        state: absent
+    - name: Downloading a file
+      get_url:
+        url: https://github.com/mamtajha-ts/tomcat-ansible/blob/master/tomcat-setup.yml
+        dest: /tmp/
+    - name: Disable SElinux without using command and shell
+      selinux:
+        state: disabled

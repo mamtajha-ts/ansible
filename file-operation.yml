@@ -1,0 +1,30 @@
+---
+- hosts: all
+  tasks:
+    - name: Creating a new user
+      user:
+        name: testuser
+    - name: Creating a directory for the new user 
+      file:
+        path: /home/testuser
+        state: directory
+    - name: creating a folder named ansible
+      file:
+        path: /home/testuser/ansible
+        state: directory
+    - name: creating a file within the folder ansible
+      file:
+        path: /home/testuser/ansible/hello.txt
+        state: touch
+    - name: Changing owner and group with permision for the file within the folder named ansible
+      file:
+        path: /home/testuser/ansible/hello.txt
+        owner: root
+        group: testuser
+        mode: 0665
+    - name: adding a block of string to the file created named hello.txt
+      blockinfile:
+        path: /home/testuser/ansible/hello.txt
+        block: |
+          This is line 1
+          This is line 2

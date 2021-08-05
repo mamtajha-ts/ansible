@@ -1,0 +1,9 @@
+---
+- hosts: jenkins
+  vars: 
+    jenkins_hostname: 52.188.126.154
+  roles:
+    - role: java
+      become: yes
+    - role: jenkins
+      become: yes 

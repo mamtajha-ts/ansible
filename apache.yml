@@ -1,0 +1,22 @@
+---
+- hosts: all
+  tasks:
+    - name: install httpd package
+      yum:
+        name: httpd
+        update_cache: yes
+        state: present
+    - name: uploading custom index.html file to host 
+      copy:
+        src: /home/allen/index.html
+        dest: /var/www/html
+    - name: Setting up attributes for file
+      file:
+        path: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode:  0644
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started

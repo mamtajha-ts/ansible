@@ -1,0 +1,23 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: install httpd package
+      yum:
+        name: httpd
+        update_cache: yes
+        state: present
+
+    - name: starting httpd
+      service: 
+        name: httpd 
+        state: started 
+        enabled: yes
+
+    - name: httpd status
+      command: service httpd status
+      register: httpd_status
+
+    - name: httpd status output
+      debug:
+        var: httpd_status.stdout_lines

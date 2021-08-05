@@ -1,0 +1,5 @@
+---
+- hosts: webserver
+  roles:
+    - role: ansible-role-postgresql
+      become: yes
