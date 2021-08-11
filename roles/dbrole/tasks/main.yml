@@ -1,0 +1,10 @@
+---
+- name: Install MariaDB server package
+  yum: 
+    name: mariadb-server 
+    state: present
+- name: Start MariaDB Service
+  service: 
+    name: mariadb 
+    state: started 
+    enabled: true

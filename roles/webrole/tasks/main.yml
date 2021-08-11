@@ -1,0 +1,21 @@
+---
+- name: install httpd
+  yum: 
+    name: httpd 
+    update_cache: yes 
+    state: latest
+- name: uploading default index.html for host
+  copy:
+    src: /home/allen/roles/webrole/files/index.html
+    dest: /var/www/html
+- name: Setting up attributes for file
+  file:
+    path: /var/www/html/index.html
+    owner: apache
+    group: apache
+    mode: 0644
+- name: start httpd
+  service:
+    name: httpd 
+    state: started
+
