@@ -1,0 +1,1000 @@
+  212  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable"=value1}'
+  213  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{ "key1": "value1", "key2":"value2" }}'
+  214  clear
+  215  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{ "key1": "value1", "key2":"value2" }}'
+  216  vim variables2.yml
+  217  vim diff_variables.yml
+  218  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{ "key1": "value1", "key2":"value2" }}'
+  219  vim variables2.yml
+  220  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{ "key1": "value1", "key2":"value2" }}'
+  221  ansible-playbook  diff_variables.yml 
+  222  vim variables2.yml
+  223  ansible-playbook  diff_variables.yml 
+  224  ansible-playbook  diff_variables.yml  -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{ "key1": "value1", "key2":"value2" }}'
+  225  clear
+  226  history
+  227  clear
+  228  vim variables2.yml 
+  229  vim diff_variables.yml 
+  230  ansible-playbook  diff_variables
+  231  ansible-playbook  diff_variables.yml
+  232  ansible-playbook diff_variables.yml -e '{"my_plain_variable":"extravalue", "my_list":[1,2,3, "my_dictionary":{"key1":"value1","key2":"value2"}}'
+  233  ansible-playbook diff_variables.yml -e '{"my_plain_variable":"extravalue", "my_list":[1,2,3], "my_dictionary":{"key1":"value1","key2":"value2"}}'
+  234  cat variables2.yml 
+  235  vim diff_variables.yml 
+  236  cat diff_variables.yml
+  237  vim variables2.yml 
+  238  vim diff_variables.yml
+  239  sudo vim /etc/ansible/hosts 
+  240  ls 
+  241  ansible-playbook var-playbook.yml
+  242  sudo vim /etc/ansible/hosts 
+  243  ansible webserver -m ping
+  244  ansible localhost -m ping
+  245  ansible localhost -m ping --extra-vars allen
+  246  ansible localhost -m ping --extra-vars ansible_user=allen
+  247  clear
+  248  vim var-playbook.yml 
+  249  ansible-playbook var-playbook.yml 
+  250  ansible-playbook var-playbook.yml --extra-vars ansible_user allen --become
+  251  ansible-playbook var-playbook.yml --extra-vars ansible_user=allen --become
+  252  vim var-playbook.yml 
+  253  ansible-playbook var-playbook.yml --extra-vars ansible_user=allen --become
+  254  vim var-playbook.yml 
+  255  ansible-playbook var-playbook.yml --extra-vars ansible_user=allen --become
+  256  ansible localhost -m setup 
+  257  sudo vim /etc/ansible/hosts 
+  258  ansible localhost -m setup 
+  259  ansible localhost -m setup --tree /tmp/facts
+  260  vim /tmp/facts/localhost
+  261  ansible localhost -m setup -a 'filter=*ip4*'
+  262  ansible localhost -m setup -a 'filter=*ipv4*'
+  263  ansible localhost -m setup -a 'filter=ansible_*'
+  264  ansible localhost -m setup -a 'filter=ansible_architecture'
+  265  ansible localhost -m setup -a 'filter=ansible_fqdn'
+  266  ansible localhost -m setup -a 'filter=ansible_domain'
+  267  ansible localhost -m setup -a 'filter=ansible_kernel'
+  268  ansible localhost -m setup -a 'filter=ansible_virt*
+  269  ansible localhost -m setup -a 'filter=ansible_virt*'
+  270  ansible localhost -m setup -a 'filter=ansible_proc*'
+  271  ansible localhost -m setup
+  272  vi facts-httpd.yml
+  273  ansible-playbook setup_facts.yml --become
+  274  ansible-playbook facts-httpd.yml --become
+  275  vi facts-httpd.yml
+  276  ansible-playbook facts-httpd.yml --become
+  277  vi facts-httpd.yml
+  278  ansible-playbook facts-httpd.yml --become
+  279  vi facts-httpd.yml
+  280  clear
+  281  ansible all -m ping
+  282  sudo vim /etc/ansible/hosts 
+  283  cd ansible/
+  284  vim var-playbook.yml 
+  285  ansible-playbook --syntax-check var-playbook.yml
+  286  ansible-playbook var-playbook.yml --become
+  287  curl 13.90.116.227
+  288  ssh 13.90.116.227
+  289  cat var-playbook.yml 
+  290  ansible-playbook var-playbook.yml --become --extra-vars "web_pkg=python3"
+  291  vim var-playbook.yml 
+  292  ansible-playbook var-playbook.yml --become --extra-vars "web_pkg=python3"
+  293  vim var-playbook.yml 
+  294  ansible-playbook var-playbook.yml --become --extra-vars "web_pkg=python3"
+  295  ansible-playbook var-playbook.yml --become
+  296  vim var-playbook.yml 
+  297  ansible-playbook var-playbook.yml --become
+  298  vim var-playbook.yml 
+  299  ansible-playbook var-playbook.yml --become
+  300  vim var-playbook.yml 
+  301  ansible-playbook var-playbook.yml --become
+  302  vim var-playbook.yml 
+  303  ssh allen@20.185.182.3
+  304  clear
+  305  vim var-playbook2.yml 
+  306  ansible-playbook var-playbook.yml --become
+  307  ansible-playbook var-playbook2.yml 
+  308  vim var-playbook2.yml 
+  309  ansible-playbook var-playbook2.yml 
+  310  vim var-playbook2.yml 
+  311  ansible-playbook var-playbook2.yml 
+  312  vim var-playbook2.yml 
+  313  ansible-playbook var-playbook2.yml 
+  314  vim var-playbook2.yml 
+  315  ansible-playbook var-playbook2.yml 
+  316  vim var-playbook2.yml 
+  317  vim diff_variables.yml
+  318  ansible-playbook diff_variables.yml
+  319  ansible-playbook diff_variables.yml -e '{"my_plain_variable":"value1", "my_list":[1,2,3],"my_dictionary":{"key1":"value1", "key2":"value2"}}'
+  320  ansible-doc --list
+  321  clear
+  322  vim diff_variables.yml
+  323  ansible-playbook diff_variables.yml
+  324  vim diff_variables.yml
+  325  ansible-playbook diff_variables.yml
+  326  vim diff_variables.yml
+  327  ansible-playbook diff_variables.yml
+  328  vim diff_variables.yml
+  329  clear
+  330  sudo vim /etc/ansible/hosts 
+  331  cat /etc/ansible/hosts
+  332  ansible webserver -m ping 
+  333  sudo vim /etc/ansible/hosts 
+  334  ansible localhost -m setup
+  335  ansible localhost -m setup -a 'filter=*ipv4*'
+  336  ansible localhost -m setup -a 'filter=ansible_*'
+  337  ansible localhost -m setup -a 'filter=ansible_architecture"
+  338  ansible localhost -m setup -a 'filter=ansible_architecture'
+  339  ansible localhost -m setup -a 'filter=ansible_fqdn"
+  340  ansible localhost -m setup -a 'filter=ansible_fqdn'
+  341  vi facts-httpd.yml
+  342  ansible-playbook facts-httpd.yml --become
+  343  sudo vim /etc/ansible/hosts 
+  344  ansible-playbook facts-httpd.yml --become
+  345  sudo vim /etc/ansible/hosts 
+  346  ansible-playbook facts-httpd.yml --become
+  347  vi facts-httpd.yml
+  348  ansible-playbook facts-httpd.yml --become
+  349  vi facts-httpd.yml
+  350  ansible localhost -m setup -a 'filter=ansible_fqdn"
+  351  ansible localhost -m setup -a 'filter=ansible_fqdn'
+  352  ansible webserver -m setup 
+  353  ansible webserver -m setup -a 'filter=general.package'
+  354  ansible webserver -m setup | grep http
+  355  vi facts-httpd.yml
+  356  ansible webserver -m setup -a 'filter=ansible_local.custom.general.package'
+  357  ansible webserver -m setup
+  358  ansible webserver -m setup -o json > localhost
+  359  ansible webserver -m setup > localhost
+  360  vim localhost 
+  361  ansible all -m ping
+  362  pwd
+  363  cd ansible/
+  364  ls
+  365  cd managing-vars/
+  366  ls
+  367  pwd
+  368  ssh allen@20.185.45.31
+  369  clear
+  370  pwd
+  371  ls -lrt
+  372  cd ..
+  373  ls
+  374  cp -r managing-vars/ /tmp/
+  375  cd /tmp/
+  376  ls -lrt
+  377  ssh allen@20.185.46.98
+  378  ssh allen@20.185.45.31
+  379  cd -
+  380  ls
+  381  ansible-vault view implement-vault.yml
+  382  ansible-vault encrypt implement-vault.yml
+  383  vim implement-vault.yml 
+  384  clear
+  385  vim implement-vault.yml 
+  386  ls
+  387  vim diff_variables.yml 
+  388  vim implement-vault.yml 
+  389  ansible-vault encrypt diff_variables.yml
+  390  vim diff_variables.yml 
+  391  ansible-vault view diff_variables.yml
+  392  ansible-playbook --ask-vault-pass diff_variables.yml  --become
+  393  ansible-vault view diff_variables.yml
+  394  ansible-vault edit diff_variables.yml
+  395  ansible-vault rekey diff_variables.yml
+  396  ansible-vault edit diff_variables.yml
+  397  ansible-vault --help
+  398  ls
+  399  vim diff_variables.yml
+  400  ansible-vault encrypt managing-vars/
+  401  clear
+  402  ls -lrt
+  403  ssh allen@20.185.45.31
+  404  pwd
+  405  c d..
+  406  cd ..
+  407  git clone https://github.com/techscalable-labs/ansible-role-postgresql.git
+  408  ls -lrt
+  409  ansible-role-postgresql/
+  410  cd ansible-role-postgresql
+  411  ls
+  412  tree
+  413  ls
+  414  cd tasks/
+  415  ls
+  416  vim main.yml 
+  417  cat setup-RedHat.yml
+  418  cd ..
+  419  grep -ri postgresql_enablerepo *
+  420  vim README.md 
+  421  grep -ri default(omit, true) *
+  422  grep -ri default *
+  423  grep -ri default\(omit, true\) *
+  424  cd tasks/
+  425  ls
+  426  cat main.yml 
+  427  cat initialize.yml 
+  428  grep -ri ansible_ssh_pipelining *
+  429  cd ..
+  430  grep -ri ansible_ssh_pipelining *
+  431  cd tasks/
+  432  cat main.yml 
+  433  cat configure.yml 
+  434  grep -ri restart postgresql *
+  435  grep -ri "restart postgresql" *
+  436  ls
+  437  cd ..
+  438  ls
+  439  cd handlers/
+  440  ls
+  441  vim main.yml 
+  442  cd ../vars/
+  443  ls
+  444  cat RedHat-7.yml 
+  445  cd ../templates/
+  446  ls
+  447  cat postgres.sh.j2
+  448  ls
+  449  cd ..
+  450  ls
+  451  cd molecule/
+  452  ls
+  453  cd default/
+  454  ls
+  455  cat molecule.yml 
+  456  cat converge.yml 
+  457  :q!
+  458  ls
+  459  cd ..
+  460  ls
+  461  cd ..
+  462  ls
+  463  cd meta/
+  464  ls
+  465  cat main.yml 
+  466  clear
+  467  cd ..
+  468  ls
+  469  cd ansible
+  470  ls
+  471  rm mongo/
+  472  rm -rf mongo/
+  473  clear
+  474  ansible all -m ping
+  475  ansible all -m setup -filter'{{ ansible_distribution_version.split('.')[0] }}'
+  476  ansible all -m setup -filter'ansible_distribution_version.split*'
+  477  ansible all -m setup --filter'ansible_distribution_version.split*'
+  478  ansible all -m setup -a 'filter=ansible_distribution_version.split*'
+  479  ansible all -m setup -a 'filter=ansible_distribution*'
+  480  ls
+  481  cd ansible-role-postgresql/
+  482  ls
+  483  ls defaults/main.yml 
+  484  cat defaults/main.yml 
+  485  :q!
+  486  ls
+  487  cat handlers/main.yml 
+  488  cat tasks/
+  489  grep -ri users.yml * 
+  490  cat tasks/main.yml 
+  491  cat tasks/users.yml 
+  492  grep -ri postgresql_users *
+  493  pwd
+  494  grep -ri ansible_ssh_pipelining *
+  495  cat molecule/default/converge.yml
+  496  ls
+  497  cd vars/
+  498  ls
+  499  cat RedHat-8.yml 
+  500  cd ..
+  501  ls
+  502  cat handlers/main.yml 
+  503  cat tasks/users_props.yml 
+  504  cat tasks/configure.yml 
+  505  cd ..
+  506  git clone https://github.com/techscalable-labs/ansible-role-mongodb.git
+  507  cd ansible-role-mongodb/
+  508  ls
+  509  tree
+  510  cd ..
+  511  cd ansible
+  512  ls
+  513  clear
+  514  ls
+  515  ansible-vault encrypt fileoperations.yml 
+  516  vim fileoperations.yml 
+  517  ansible-vault view fileoperations.yml 
+  518  ansible-playbook --ask-vault-pass fileoperations.yml  --become
+  519  ansible-vault edit fileoperations.yml 
+  520  ansible-vault rekey fileoperations.yml 
+  521  ansible-playbook --ask-vault-pass fileoperations.yml  --become
+  522  ansible-vault create secret_key
+  523  ansible all --ask-vault-pass -m copy 'src=secret_key dest=/tmp/secret_key' 
+  524  ansible all --ask-vault-pass -m copy -a 'src=secret_key dest=/tmp/secret_key' 
+  525  ansible-vault --help
+  526  ansible-vault create secret_key1
+  527  ansible all --ask-vault-pass -m copy -a 'src=secret_key1 dest=/tmp/secret_key1' 
+  528  vim copy.yml
+  529  cd ..
+  530  git clone https://github.com/kosalaat/oracle_install.git
+  531  cd oracle_install/
+  532  ls
+  533  cd tasks/
+  534  ls
+  535  cd ..
+  536  grep -ri sdb * 
+  537  vim README.md 
+  538  grep -ri oracle_pvs
+  539  grep -ri oracle_pvs *
+  540  grep -ri volume * 
+  541  grep -ri vol * 
+  542  ls
+  543  cd tasks/
+  544  ls
+  545  grep -ri "create the volume group" * 
+  546  vim filesystems.yml 
+  547  cd ..
+  548  grep -ri oracle_pv * 
+  549  vim tasks/main.yml 
+  550  ls
+  551  cd templates/
+  552  ls
+  553  grep -ri oracle_pv  *
+  554  c d..
+  555  cd ..
+  556  cd vars/
+  557  ls
+  558  cat main.yml 
+  559  :q!
+  560  ls
+  561  cd ..
+  562  ls
+  563  cd defaults/
+  564  ls
+  565  cat main.yml 
+  566  cd ..
+  567  ls
+  568  cd tasks/
+  569  df -h
+  570  cd ..
+  571  ls
+  572  cd ..
+  573  ls
+  574  cd oracle_install/
+  575  ls
+  576  grep -ri partition *
+  577  cat tasks/filesystems.yml
+  578  vim tasks/filesystems.yml
+  579  cd tasks/
+  580  ls
+  581  cat main.yml 
+  582  :q!
+  583  cat main.yml 
+  584  vim main.yml 
+  585  cd ..
+  586  ls
+  587  cd ..
+  588  ls
+  589  git clone https://github.com/oravirt/ansible-oracle.git
+  590  cd ansible-oracle/
+  591  ls
+  592  ansible-playbook single-instance-db-on-asm.yml
+  593  vim single-instance-db-on-asm.yml
+  594  grep -ri single-instance-db-on-asm.yml *
+  595  grep -ri single-instance-db-on-asm * 
+  596  cd roles/
+  597  ls
+  598  ansible-playbook  oraswdb-install
+  599  cd ..
+  600  ls
+  601  cd ..
+  602  ls
+  603  pwd
+  604  mkdir oracledb
+  605  cd oracle
+  606  cd oracledb/
+  607  git clone https://github.com/oravirt/ansible-oracle.git
+  608  ls
+  609  cp ~/ansible/var-playbook.yml .
+  610  vim var-playbook.yml 
+  611  ls
+  612  cd ansible-oracle/
+  613  ls
+  614  cd roles/
+  615  ls
+  616  cd ../..
+  617  ls
+  618  vim var-playbook.yml
+  619  ansible-playbook var-playbook.yml --become
+  620  vim var-playbook.yml
+  621  ansible-playbook var-playbook.yml --become
+  622  ls
+  623  cd ansible-oracle/
+  624  ls
+  625  cd roles/
+  626  ls
+  627  cp -rf oradb-create/ ../.
+  628  pwd
+  629  cd ..
+  630  ls
+  631  cp -rf oradb-create ../.
+  632  ls
+  633  cd ..
+  634  ls
+  635  ansible-playbook var-playbook.yml --become
+  636  cd oradb-create/
+  637  ls
+  638  cd t
+  639  cd tasks/
+  640  ls
+  641  cat main.yml 
+  642  ls
+  643  cat listener.yml 
+  644  cd ..
+  645  ls
+  646  cd ansible-oracle/
+  647  ls
+  648  grep -ri oracle_user *
+  649  cd ..
+  650  ls
+  651  cd ..
+  652  ls
+  653  cd oracle_install/
+  654  ls
+  655  grep -ri oracle_images *
+  656  vim defaults/main.yml
+  657  grep -ri oracle_installer_path *
+  658  vim defaults/main.yml
+  659  ls
+  660  cd tasks/
+  661  vim main.yml 
+  662  cd ..
+  663  ls
+  664  cd ..
+  665  git clone https://github.com/asiandevs/OracleDBAwithAnsible
+  666  ls
+  667  cd OracleDBAwithAnsible/
+  668  ls
+  669  ansible-playbook dbsoftware19c_install 
+  670  ansible-playbook oracle19c_rdbmsinstall.yml 
+  671  sudo vim /etc/ansible/hosts 
+  672  ansible-playbook oracle19c_rdbmsinstall.yml 
+  673  sudo vim /etc/ansible/hosts 
+  674  ansible-playbook oracle19c_rdbmsinstall.yml 
+  675  sudo vim /etc/ansible/hosts 
+  676  ansible all -m ping
+  677  ansible-playbook oracle19c_rdbmsinstall.yml 
+  678  ssh 13.90.116.222
+  679  ls
+  680  vim oracle19c_rdbmsinstall.yml 
+  681  ansible-playbook oracle19c_rdbmsinstall.yml --become
+  682  ls
+  683  cd roles/
+  684  ls
+  685  cd dbsoftware19c_install/
+  686  ls
+  687  grep ri "create required directories" *
+  688  grep -ri "create required directories" *
+  689  vim tasks/main.yml 
+  690  grep -ri root_user * 
+  691  vim vars/main.yml 
+  692  cd ../..
+  693  ls
+  694  ansible-playbook oracle19c_rdbmsinstall.yml --become
+  695  exit
+  696  ls
+  697  cd ansible-role-postgresql/
+  698  ls
+  699  cd tasks/
+  700  ls
+  701  cat main.yml 
+  702  cat variables.yml
+  703  cd ..
+  704  grep -ri __postgresql_packages *
+  705  cat vars/RedHat-8.yml 
+  706  :q!
+  707  clear
+  708  cd ..
+  709  cd ansible
+  710  exit
+  711  git clone https://github.com/asiandevs/OracleDBAwithAnsible.git
+  712  cd OracleDBAwithAnsible/
+  713  ls
+  714  ansible-playbook oracle19c_rdbmsinstall.yml 
+  715  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  716  cd OracleDBAwithAnsible/
+  717  ls
+  718  cat roles/dbsoftware19c_install/tasks/main.yml 
+  719  grep -ri root_user *
+  720  vim roles/dbsoftware19c_install/vars/main.yml
+  721  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  722  cat roles/dbsoftware19c_install/tasks/main.yml 
+  723  grep -ri oracle_user *
+  724  vim roles/dbsoftware19c_install/vars/main.yml
+  725  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  726  ssh 13.90.116.222 
+  727  vim roles/dbsoftware19c_install/vars/main.yml
+  728  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  729  vim 
+  730  vim roles/dbsoftware19c_install/tasks/main.yml 
+  731  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  732  vim roles/dbsoftware19c_install/vars/main.yml
+  733  vim roles/dbsoftware19c_install/tasks/main.yml 
+  734  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  735  vim roles/dbsoftware19c_install/tasks/main.yml 
+  736  grep -ri "stage_dir" *
+  737  vim roles/dbsoftware19c_install/tasks/main.yml 
+  738  ls -lrt
+  739  cd ansible-role-mongodb/
+  740  ls
+  741  cd ..
+  742  mkdir mongodb
+  743  cd mongodb/
+  744  git clone https://github.com/techscalable-labs/ansible-role-mongodb.git
+  745  tree
+  746  ls
+  747  vim playbook.yml
+  748  ansible-playbook playbook.yml --become
+  749  sudo vim /etc/ansible/hosts 
+  750  ansible-playbook playbook.yml --become
+  751  ssh 13.90.116.227
+  752  exit
+  753  mkdir mysql
+  754  cd mysql/
+  755  git clone https://github.com/techscalable-labs/ansible-role-mysql-1.git
+  756  tree -L 2
+  757  tree 
+  758  vim playbbok.yml
+  759  vim playbook.yml
+  760  sudo vi /etc/ansible/hosts
+  761  ansible-playbook playbook.yml --become
+  762  ls
+  763  grep -ri Check mysql version
+  764  grep -ri Check mysql version *
+  765  ls
+  766  cd ansible-role-mysql-1/
+  767  ls
+  768  cd tasks/
+  769  ls
+  770  vim main.yml 
+  771  vim secure-installation.yml 
+  772  ls
+  773  cd ..
+  774  ls
+  775  c d..
+  776  lscd ..
+  777  cd ..
+  778  ls
+  779  vim playbook.yml 
+  780  ansible-playbook playbook.yml --become
+  781  ssh 13.90.116.227
+  782  cd ..
+  783  ls
+  784  cd OracleDBAwithAnsible/
+  785  ls
+  786  cat roles/dbsoftware19c_install/tasks/main.yml 
+  787  ansible-playbook playbook.yml --become
+  788  ls
+  789  ansible-playbook oracle19c_rdbmsinstall.yml --become
+  790  ls
+  791  cd OracleDBAwithAnsible/
+  792  ls
+  793  vim roles/dbsoftware19c_install/vars/main.yml
+  794  mkdir /u01
+  795  sudo mkdir /u01
+  796  sudo cd /u01/
+  797  sudo mkdir stage
+  798  mv ~/LINUX.X64_193000_db_home.zip .
+  799  cd -
+  800  cd OracleDBAwithAnsible/
+  801  sudo cd /u01/
+  802  ls
+  803  cd stage/
+  804  ls
+  805  cd ..
+  806  ls
+  807  mv LINUX.X64_193000_db_home.zip stage/.
+  808  sudo mv LINUX.X64_193000_db_home.zip stage/.
+  809  ls
+  810  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  811  ls /u01/stage/LINUX.X64_193000_db_home.zip
+  812  cd
+  813  sudo cd /u01/
+  814  ls
+  815  sudo su 
+  816  pwd
+  817  cd OracleDBAwithAnsible/
+  818  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  819  vim roles/dbsoftware19c_install/tasks/main.yml
+  820  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  821  cd /u01/stage/
+  822  ls
+  823  pwd
+  824  cp /home/allen/OracleDBAwithAnsible/stage/LINUX.X64_193000_db_home.zip .
+  825  sudo cp /home/allen/OracleDBAwithAnsible/stage/LINUX.X64_193000_db_home.zip .
+  826  ls
+  827  cd ~
+  828  pwd
+  829  cd OracleDBAwithAnsible/
+  830  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  831  vim roles/dbsoftware19c_install/tasks/main.yml
+  832  c d..
+  833  ls
+  834  cd ..
+  835  ls
+  836  unzip LINUX.X64_193000_db_home.zip 
+  837  ls -ler
+  838  ls -lrt
+  839  unzip -d /u01/app/oracle/product/19.0.0/ LINUX.X64_193000_db_home.zip
+  840  cd OracleDBAwithAnsible/
+  841  ls
+  842  cd roles/
+  843  ls
+  844  cat dbsoftware19c_install/
+  845  cd dbsoftware19c_install/
+  846  ls
+  847  cat tasks/main.yml 
+  848  cd ../../
+  849  grep -ri oracle_home *
+  850  clear
+  851  sudo vim /etc/ansible/hosts 
+  852  ssh 13.90.116.222
+  853  ansible-playbook oracle19c_rdbmsinstall.yml  --become
+  854  cd ansible
+  855  ansible-galaxy install geerlingguy.apache
+  856  cd /home/allen/.ansible/
+  857  ls
+  858  cd roles 
+  859  ls
+  860  rm geerlingguy.apache 
+  861  rm -rf geerlingguy.apache 
+  862  ansible-galaxy install geerlingguy.apache
+  863  ls -lrt
+  864  cd geerlingguy.apache
+  865  ls
+  866  clear
+  867  ls
+  868  cd tasks/
+  869  ls
+  870  cat main.yml 
+  871  cat setup-RedHat.yml
+  872  cd ..
+  873  grep -ri apache_packages_state *
+  874  cat defaults/main.yml
+  875  cd vars/
+  876  ls
+  877  cat RedHat.yml 
+  878  cd ..
+  879  tree 
+  880  cd ..
+  881  vim apache.yml
+  882  ansible-playbook  apache.yml --become
+  883  vim apache.yml
+  884  history
+  885  sudo vim /etc/ansible/hosts 
+  886  ansible-playbook  apache.yml --become
+  887  ls
+  888  cp apache.yml java.yml
+  889  vim java.yml 
+  890  ansible-playbook  java.yml --become
+  891  ansible all -m ping
+  892  sudo cat /etc/ansible/hosts 
+  893  ansible all -m ping
+  894  ls -lrt
+  895  cat apache.yml 
+  896  cd
+  897  ls
+  898  cd ansible-role-mongodb/
+  899  ls
+  900  ls -lty
+  901  cd ..
+  902  ls -lrt
+  903  cd mongodb/
+  904  ls
+  905  cd ansible-role-mongodb/
+  906  ls
+  907  cat requirements.txt 
+  908  cat meta/
+  909  cat meta/main.yml 
+  910  ls
+  911  cd molecule/cluster
+  912  ls
+  913  cat molecule.yml 
+  914  pwd
+  915  cd ../..
+  916  ls
+  917  cat handlers/main.yml 
+  918  cat library/mongodb_replication.py 
+  919  grep -ri "mongodb_replication.py" *
+  920  clear
+  921  ls
+  922  cat templates/mongodb.service.j2
+  923  :q!
+  924  clear
+  925  ls
+  926  cat vars/RedHat.yml 
+  927  cat tasks/main.yml 
+  928  grep -ri mongodb_oplog_users *
+  929  ls
+  930  cd tasks/
+  931  ls
+  932  cd ..
+  933  ls
+  934  cd ..
+  935  ls
+  936  vim /etc/ansible/hosts 
+  937  sudo vim /etc/ansible/hosts 
+  938  cd ..
+  939  ls
+  940  cd /tmp
+  941  git clone https://github.com/techscalable-labs/ansible.git
+  942  ls
+  943  cd ansible
+  944  ls
+  945  cd ..
+  946  ls
+  947  cd ~
+  948  cd ansible
+  949  ls
+  950  cd ..
+  951  ls -lrt
+  952  pwd
+  953  sftp allen@104.45.158.14
+  954  scp -r OracleDBAwithAnsible allen@104.45.158.14:/tmp
+  955  cd ansible
+  956  ls -lrt
+  957  git remote add origin https://github.com/mamtajha-ts/ansible.git
+  958  git remote remove origin
+  959  git remote add origin https://github.com/mamtajha-ts/ansible.git
+  960  git push -u origin main
+  961  git add .
+  962  git commit -m "all files demo"
+  963  cd ..
+  964  cp -rf roles/ .
+  965  cd ..
+  966  ls -lrt
+  967  cd allen/
+  968  ls
+  969  cd ansible
+  970  ls
+  971  cp -rf ../roles/ .
+  972  git add .
+  973  git commit -m "all files demo"
+  974  git push -u origin main
+  975  git push -u origin master
+  976  cd ansible
+  977  ls
+  978  ansible all -m ping
+  979  ansible-galaxy install geerlingguy.java
+  980  ls -lrt
+  981  ls -lty
+  982  ls -lrt
+  983  ansible-galaxy --help
+  984  clear
+  985  ansible-galaxy role search
+  986  ansible-galaxy role search --author geerlingguy
+  987  ansible-galaxy install geerlingguy.apache
+  988  ls -lrt
+  989  cd /home/allen/.ansible/roles/
+  990  ls -lrt
+  991  cd geerlingguy.java/
+  992  ls
+  993  clear
+  994  cd
+  995  cd ansible
+  996  clear
+  997  ansible-galaxy search --help
+  998  ansible-galaxy search --author geerlingguy
+  999  ansible
+ 1000  cd ansible
+ 1001  ls
+ 1002  cd roles/
+ 1003  ls
+ 1004  cd ..
+ 1005  ls
+ 1006  clear
+ 1007  ansible all -m ping
+ 1008  clear
+ 1009  ls
+ 1010  cd /home/allen/.ansible/
+ 1011  ls
+ 1012  cd roles
+ 1013  rm *
+ 1014  rm -rf *
+ 1015  clear
+ 1016  ansible-galaxy search --help
+ 1017  ansible-galaxy search geerlingguy
+ 1018  ansible-galaxy search --author geerlingguy
+ 1019  ansible-galaxy install geerlingguy.apache
+ 1020  cd /home/allen/.ansible/roles/
+ 1021  ls -lrt
+ 1022  cd geerlingguy.apache/
+ 1023  ls
+ 1024  cd tasks/
+ 1025  ls
+ 1026  cat main.yml 
+ 1027  ls -lrt
+ 1028  cat setup-RedHat.yml
+ 1029  cat configure-RedHat.yml
+ 1030  cd ..
+ 1031  ls
+ 1032  cd ..
+ 1033  ls
+ 1034  vim apache.yml
+ 1035  ansible-playbook apache.yml --become
+ 1036  cd
+ 1037  cd /home/allen/
+ 1038  pwd
+ 1039  ls
+ 1040  cd mongodb/
+ 1041  ls
+ 1042  cd ansible-role-mongodb/
+ 1043  ls
+ 1044  cd tasks/
+ 1045  ls
+ 1046  cat main.yml 
+ 1047  :q!
+ 1048  ls
+ 1049  cat install.redhat.yml
+ 1050  :q!
+ 1051  cd ..
+ 1052  ls -lrt
+ 1053  pwd
+ 1054  cd ..
+ 1055  ls -lrt
+ 1056  vim playbook.yml 
+ 1057  sudo vim /etc/ansible/hosts 
+ 1058  ansible-playbook  playbook.yml  --become
+ 1059  cd ..
+ 1060  cd /tmp
+ 1061  mkdir mysql
+ 1062  cd mysql/
+ 1063  ls
+ 1064  git clone https://github.com/techscalable-labs/ansible-role-mysql-1.git
+ 1065  ls
+ 1066  cd ansible-role-mysql-1/
+ 1067  ls
+ 1068  vim handlers/main.yml 
+ 1069  tree
+ 1070  vim tasks/main.yml 
+ 1071  pwd
+ 1072  vim tasks/main.yml 
+ 1073  grep -ri platform_vars *
+ 1074  ls
+ 1075  cat tasks/setup-RedHat.yml 
+ 1076  ls
+ 1077  cat vars/main.yml 
+ 1078  cat vars/RedHat-8-mysqld.yml 
+ 1079  ls
+ 1080  cat defaults/main.yml 
+ 1081  ls
+ 1082  cd tasks
+ 1083  vim main.yml 
+ 1084  cd
+ 1085  cd /home/allen/
+ 1086  ls
+ 1087  vim with_first_found.yml
+ 1088  ansible-playbook with_first_found.yml 
+ 1089  cat with_first_found.yml 
+ 1090  touch RedHat.yml
+ 1091  ansible-playbook with_first_found.yml 
+ 1092  pwd
+ 1093  cd /tmp/mysql/ansible-role-mysql-1/tasks/
+ 1094  cat main.yml 
+ 1095  q!
+ 1096  ls -lrt
+ 1097  cd ..
+ 1098  cd vars/
+ 1099  ls -lrt
+ 1100  cd ../..
+ 1101  ls
+ 1102  cd /home/allen/mysql/
+ 1103  ls
+ 1104  ansible-playbook  playbook.yml --become
+ 1105  sudo vi /etc/ansible/hosts 
+ 1106  ansible-playbook  playbook.yml --become
+ 1107  cd
+ 1108  cd /home/allen/
+ 1109  vim sudouseradd.yml
+ 1110  ansible-playbook sudouseradd.yml --become
+ 1111  ls 
+ 1112  sudo cat /etc/passwd
+ 1113* l
+ 1114  sudo cat /etc/sudoers
+ 1115  sudo cat /etc/passwd
+ 1116  vim sudouseradd.yml
+ 1117  cat /etc/group
+ 1118  :q!
+ 1119  vim sudouseradd.yml
+ 1120  ansible-playbook sudouseradd.yml --become
+ 1121  vim sudouseradd.yml
+ 1122  ansible-playbook sudouseradd.yml --become
+ 1123  vim sudouseradd.yml
+ 1124  ansible-playbook sudouseradd.yml --become
+ 1125  vim sudouseradd.yml
+ 1126  ansible-playbook sudouseradd.yml --become
+ 1127  clear
+ 1128  ansible all -m ping
+ 1129  ansible-galaxy search --help
+ 1130  pwd
+ 1131  cd .ansible/roles/
+ 1132  ls -lrt
+ 1133  rm -rf geerlingguy
+ 1134  rm -rf geerlingguy.apache/
+ 1135  ansible-galaxy search --author geerlingguy
+ 1136  ansible-galaxy install geerlingguy.apache
+ 1137  pwd
+ 1138  ls -lrt
+ 1139  cat apache.yml 
+ 1140  cd geerlingguy.apache/
+ 1141  ls
+ 1142  cd defaults/
+ 1143  ls
+ 1144  cat main.yml 
+ 1145  cd ..
+ 1146  ls
+ 1147  cd handlers/
+ 1148  ls
+ 1149  cat main.yml 
+ 1150  cd ../vars/
+ 1151  cat RedHat.yml 
+ 1152  cat apache-22.yml 
+ 1153  cd ..
+ 1154  ls
+ 1155  cd tasks/
+ 1156  ls
+ 1157  cat main.yml 
+ 1158  ls
+ 1159  cat setup-RedHat.yml 
+ 1160  cat configure-RedHat.yml 
+ 1161  pwd
+ 1162  cd ..
+ 1163  grep -ri apache_ports_configuration_items *
+ 1164  cat vars/apache-24.yml
+ 1165  /pache_ports_configuration_items
+ 1166  cat vars/apache-24.yml
+ 1167  grep -ri  apache_vhosts_ssl  *
+ 1168  cd ..
+ 1169  ls
+ 1170  ansible-playbook apache.yml --become
+ 1171  pwd
+ 1172  cd /home/allen/
+ 1173  ls
+ 1174  cd ansible-role-postgresql/
+ 1175  ls
+ 1176  cat tasks/main.yml 
+ 1177  cat tasks/users.yml 
+ 1178  cd ..
+ 1179  mkdir postgresql
+ 1180  ls
+ 1181  cd postgresql/
+ 1182  ls
+ 1183  sudo yum install git
+ 1184  git clone https://github.com/techscalable-labs/ansible-role-postgresql.git
+ 1185  cd ansible-role-postgresql/
+ 1186  ls
+ 1187  vim playbook.yml
+ 1188  ansible-playbook playbook.yml --become
+ 1189  vim playbook.yml
+ 1190  ansible-playbook playbook.yml --become
+ 1191  vim playbook.yml
+ 1192  sudo vim /etc/ansible/hosts 
+ 1193  ansible-playbook playbook.yml --become
+ 1194  vim playbook.yml
+ 1195  cp ../../mongodb/playbook.yml .
+ 1196  vim playbook.yml 
+ 1197  ansible-playbook playbook.yml --become
+ 1198  ls
+ 1199  cd ..
+ 1200  ls
+ 1201  ls -lrt
+ 1202  cd ..
+ 1203  ls
+ 1204  pwd
+ 1205  cd postgresql/
+ 1206  ls
+ 1207  mv ansible-role-postgresql/playbook.yml .
+ 1208  ansible-playbook playbook.yml --become
+ 1209  sudo vim /etc/ansible/hosts 
+ 1210  history 
+ 1211  history > ansible_cmd
