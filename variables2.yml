@@ -1,0 +1,6 @@
+my_plain_variable: "ImPlain"
+my_list:
+  - 5
+  - 6
+  - 7
+my_dictionary: { "key1": "value5", "key2":"value6" }

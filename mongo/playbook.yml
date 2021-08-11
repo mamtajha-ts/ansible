@@ -1,9 +1,0 @@
----
-- name: use vhost role playbook
-  hosts: mongotest
-  
-  roles:
-  - ansible-role-mongodb
-  #tasks:
-  #- name: Include the variables from a YAML or JSON file
-  #  include_vars: ansible-role-mongodb/vars/variables.yml

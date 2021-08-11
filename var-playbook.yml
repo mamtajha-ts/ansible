@@ -5,17 +5,16 @@
     firewall_pkg: firewalld
     web_service: httpd
     firewall_service: firewalld
-    python_pkg: python-httplib2
+    #ansible_user: maria
     rule: http
   tasks:
-  - name: Required packages are installed and up to date
+  - name: The {{ web_pkg }} and {{ firewall_pkg }} packages are installed and up to date
     yum:
       name:
       - "{{ web_pkg }}"
       - "{{ firewall_pkg }}"
-      - "{{ python_pkg }}"
       state: latest
-  - name: The {{ firewall_service }} service is started and enabled
+  - name: The "{{ firewall_service }}" service is started and enabled
     service:
       name: "{{ firewall_service }}"
       enabled: true

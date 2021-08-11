@@ -2,11 +2,16 @@
 - name: Install Apache and starts the service
   hosts: webserver
   tasks:
-  - name: Install the required package
+  - name: Install the required "{{ ansible_local.custom.general.package }}" package
     yum:
       name: "{{ ansible_local.custom.general.package }}"
       state: latest
-  - name: Start the service
+  - name: Start the "{{ ansible_local.custom.general.service }}" service
     service:
       name: "{{ ansible_local.custom.general.service }}"
       state: "{{ ansible_local.custom.general.state }}"
+  - name: Print ansible facts
+    debug:
+      msg: 
+        - "{{ ansible_architecture }}"
+        - "{{ ansible_all_ipv4_addresses }}"

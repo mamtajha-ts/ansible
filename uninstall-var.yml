@@ -5,7 +5,6 @@
     firewall_pkg: firewalld
     web_service: httpd
     firewall_service: firewalld
-    python_pkg: python-httplib2
     rule: http
   tasks:
   - name: Required packages are installed and up to date
@@ -13,5 +12,4 @@
       name:
       - "{{ web_pkg }}"
       - "{{ firewall_pkg }}"
-      - "{{ python_pkg }}"
       state: absent

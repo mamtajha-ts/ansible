@@ -1,0 +1,35 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: installing httpd pkg
+      yum:
+        name: httpd
+        state: present
+        update_cache: yes
+    - name: installing curl pkg
+      yum:
+        name: curl
+        state: present
+        update_cache: yes
+    - name: delete stale index.html
+      file:
+        path: /var/www/html/index.html
+        state: absent
+    - name: uploading custom index file
+      copy:
+        src: /home/allen/ansible/index.html
+        dest: /var/www/html
+    - name: proper permission for index file
+      file:
+        path: /var/www/html/index.html
+        mode: 0644 
+    - name: add lineinfile
+      lineinfile:
+        path: /var/www/html/index.html
+        regexp: "Hi"
+        state: absent
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started

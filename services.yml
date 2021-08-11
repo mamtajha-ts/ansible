@@ -9,6 +9,7 @@
       get_url:
         url: https://github.com/mamtajha-ts/tomcat-ansible/blob/master/tomcat-setup.yml
         dest: /tmp/
+        force: yes
     - name: Disable SElinux without using command and shell
       selinux:
         state: disabled

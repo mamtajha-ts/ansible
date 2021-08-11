@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  become: yes
+  tasks:
+    - name: create a new user
+      user:
+        name: testuser1
+    - name: create dir
+      file:
+        path: /home/testuser1/dir1
+        state: directory
+    - name: adding content
+      blockinfile:
+        path: /home/testuser1/dir1/present.txt 
+        block: |
+          I am appending line but befor hi.
+        create: yes
+    - name: add lineinfile
+      lineinfile:
+        path: /home/testuser1/dir1/present.txt 
+        insertafter: "hi"
+        state: present
+        line: "I am adding"
+    - name: Insert/Update HTML surrounded by custom markers after <body> line
+      blockinfile:
+        path: /home/testuser1/dir1/present.txt 
+        insertafter: "<body>"
+        block: |
+          <h1>Welcome to {{ ansible_hostname }}</h1>
+          <p>Last updated on {{ ansible_date_time.iso8601 }}</p>
