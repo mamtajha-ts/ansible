@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+    - name: create user
+      user:
+        name: mamta
+    - name: create home dir
+      file: 
+        path: /home/mamta
+        state: directory
